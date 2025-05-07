@@ -18,12 +18,14 @@ function Map() {
   const [lat, lng] = useUrlPosition();
   const { cityList } = useSelector((store) => store.cities);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (lat && lng) {
+    if (lat && lng && (mapPosition[0] !== lat || mapPosition[1] !== lng)) {
       setMapPosition([lat, lng]);
       dispatch(fetchCityData(lat, lng));
     }
-  }, [lat, lng, dispatch]);
+  }, [lat, lng, dispatch, mapPosition]);
+
   return (
     <div className={styles.mapContainer}>
       <MapContainer
@@ -36,6 +38,7 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
+
         {cityList.map((city, i) => (
           <Marker position={[city.position.lat, city.position.lon]} key={i}>
             <Popup className={styles.popUp}>
@@ -53,7 +56,11 @@ function Map() {
 
 function ChangeCenter({ position }) {
   const map = useMap();
-  map.setView(position);
+
+  useEffect(() => {
+    map.setView(position);
+  }, [position, map]);
+
   return null;
 }
 

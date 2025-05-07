@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import useUrlPosition from "../hooks/useUrlPosition";
@@ -14,6 +14,16 @@ function City() {
 
   const navigate = useNavigate();
   const [lat, lng] = useUrlPosition();
+
+  useEffect(() => {
+    document.title = isLoading
+      ? "Loading..."
+      : errorMessage
+      ? errorMessage
+      : activeCity.cityName;
+
+    return () => (document.title = "WeatherCare");
+  }, [errorMessage, isLoading, activeCity]);
 
   useEffect(() => {
     if (!lat || !lng) navigate("/app/cities");
@@ -87,4 +97,4 @@ function City() {
   );
 }
 
-export default City;
+export default memo(City);
