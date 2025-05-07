@@ -1,0 +1,11 @@
+.sideBar {
+  background-color: var(--dark-gray);
+  flex-basis: 52rem;
+  padding: 2rem 3rem 2.5rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
+  height: calc(100vh - 4.8rem);
+}

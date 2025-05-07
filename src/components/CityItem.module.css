@@ -1,0 +1,106 @@
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  background-color: var(--litte-dark-gray);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 0.5rem solid var(--btn-bg);
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link:visited {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.item:hover {
+  background-color: var(--light-dark-gray);
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.item h4 {
+  font-size: 1.8rem;
+  max-width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.others {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.item p {
+  font-size: 1.8rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.item:visited {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  transform: scale(1.25);
+}
+
+.icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s ease;
+}
+
+.deleteBtn:hover .icon {
+  transform: rotate(5deg);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

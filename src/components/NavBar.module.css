@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.5rem 5rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.links a {
+  color: white;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:visited {
+  color: white;
+  text-decoration: none;
+}

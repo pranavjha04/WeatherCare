@@ -1,0 +1,25 @@
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLink {
+  background-color: var(--litte-dark-gray);
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: var(--light-dark-gray);
+}
+
+.navLink:visited {
+  color: var(--text-color);
+  text-decoration: none;
+}
